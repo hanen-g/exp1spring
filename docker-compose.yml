@@ -1,0 +1,7 @@
+services:
+
+# Spring Boot Application
+spring-boot-app:
+image: docexpi-spring
+ports:
+- "B.0.0.0:8884:8080"
