@@ -1,7 +1,7 @@
 pipeline {
   agent any
   tools {
-    maven "maven'
+    maven "maven"
 }
   stages {
     stage ("Clean up"){
@@ -14,7 +14,7 @@ pipeline {
             sh "git clone https://github.com/hanen-g/exp1spring.git"
     }
 }
-  stage ("Generate backend image") {
+    stage ("Generate backend image") {
     steps {
       dir("exp1-spring"){
               sh "mvn clean install"
