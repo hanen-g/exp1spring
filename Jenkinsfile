@@ -3,11 +3,11 @@ pipeline {
   tools {
     maven "maven'
 }
-stages {
+  stages {
     stage ("Clean up"){
-        steps {
+      steps {
             deleteDir()
-        }
+      }
     }
     stage ("Clone repo"){
         steps {
@@ -16,7 +16,7 @@ stages {
 }
   stage ("Generate backend image") {
     steps {
-      dir("expi-spring"){
+      dir("exp1-spring"){
               sh "mvn clean install"
               sh "docker build -t docexp1-spring ."
             }
@@ -24,10 +24,10 @@ stages {
     }
   stage ("Run docker compose") {
     steps {
-      dir("expi-spring"){
+      dir("exp1-spring"){
         sh " docker compose up -d"
       }
     }
   }
-}
+  }
 }
